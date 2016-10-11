@@ -1,0 +1,102 @@
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+<div class="container" id="preview">
+    <br />
+    <br />
+    <h1>Notify - Javascript Notifications with Sound</h1>
+    <hr />
+
+
+    <div class="well well-sm">
+        <h3>Demo</h3>
+        <button onclick="notify().warning().message('Hi ths is a Warning Message');" class="btn btn-warning">Show Warning Message</button>
+        <button onclick="notify().success().message('Hi ths is a Success Message');" class="btn btn-success">Show Success Message</button>
+        <br />
+        <br />
+        <p>Code: </p>
+        <code class="javascript" contenteditable="">
+            &lt;button onclick="notify().warning().message('Hi ths is a Warning Message');" class="btn btn-warning"&gt;Show Warning Message&lt;/button&gt;
+        </code>
+
+    </div>
+
+    <p>Simple to integrate in any javascript or jquery project, fast on-page notifications or alerts that also produces sound, some key features.</p>
+    <ul>
+        <li>Better alerts/notifications</li>
+        <li>Fast and customizable</li>
+        <li>No Dependencies, only Javascript</li>
+        <li>Audio Notification</li>
+    </ul>
+    <blockquote>
+        <p>Audo notification currently only support Chrome and Mozilla.</p>
+    </blockquote>
+    <h3>
+        <a id="Installation_12"></a>Installation</h3>
+    <pre><code class="language-js">&lt;script src=<span class="hljs-string">"notify.js"</span> type=<span class="hljs-string">"script/javascript"</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="actionscript">
+notify().message(<span class="hljs-string">"Hello World!"</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</span></code></pre>
+    <h6>
+        <a id="Changing_Styles_22"></a>Changing Styles</h6>
+    <pre><code class="language-js">notify().success().message(<span class="hljs-string">"Successfull Hello World"</span>);
+</code></pre>
+    <p>other methods are:</p>
+    <ul>
+        <li>success()</li>
+        <li>danger()</li>
+        <li>info()</li>
+        <li>warning()</li>
+    </ul>
+    <h6>
+        <a id="Changing_Position_33"></a>Changing Position</h6>
+    <pre><code class="language-js">notify({
+    position: <span class="hljs-string">"topright"</span>
+}).message(<span class="hljs-string">"Hello World"</span>);
+</code></pre>
+    <p>support position strings:</p>
+    <ul>
+        <li>topleft</li>
+        <li>topright</li>
+        <li>bottomleft</li>
+        <li>bottomright</li>
+    </ul>
+    <h3>
+        <a id="Defaults_46"></a>Defaults</h3>
+    <pre><code class="language-js"><span class="hljs-keyword">var</span> n = notify({
+    type: <span class="hljs-string">"success"</span>,
+    duration: <span class="hljs-number">3000</span>,
+    defaultText: <span class="hljs-string">"Hello World!"</span>,
+    itemClassName: <span class="hljs-string">"NotifyItem"</span>,
+    position: <span class="hljs-string">'topright'</span>,
+    sound: <span class="hljs-literal">true</span>
+})
+</code></pre>
+    <h3>
+        <a id="Wait_before_executing_59"></a>Wait before executing</h3>
+    <p>You can also add pause/wait before showing the notification using the wait() method, here’s how:</p>
+    <pre><code class="language-js"><span class="hljs-keyword">var</span> n = notify();
+n.wait(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    n.message(<span class="hljs-string">"Hello World!"</span>)
+}, <span class="hljs-number">5000</span>);
+</code></pre>
+    <h3>
+        <a id="Todos_71"></a>Todos</h3>
+    <ul>
+        <li>Alert browser safari browser support</li>
+    </ul>
+    <h2>
+        <a id="License_75"></a>License</h2>
+    <p>MIT</p>
+</div>
+
+
+<script src="notify.min.js"></script>
+<script>
+    var n = notify({
+        duration: 3000
+    });
+    n.wait(function() {
+        n.message("Hi! I am a Notification!")
+    }, 2000);
+</script>
